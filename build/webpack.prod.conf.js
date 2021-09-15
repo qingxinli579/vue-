@@ -67,7 +67,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? 'index.html'
         : path.resolve(__dirname,'../dist/test1.html'),
       template: 'template/test1.html',
-      chunks:['test1','vendor','mainfest'],
+      chunks:['manifest','vendor','app','test1'],
       inject: true,
       minify: {
         removeComments: true,
@@ -84,7 +84,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? 'index.html'
         : path.resolve(__dirname,'../dist/test2.html'),
       template: 'template/test2.html',
-      chunks:['test2','vendor','mainfest'],
+      chunks:['manifest','vendor','test2'],
       inject: true,
       minify: {
         removeComments: true,
