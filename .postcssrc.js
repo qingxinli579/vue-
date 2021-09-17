@@ -1,10 +1,12 @@
-// https://github.com/michael-ciniawsky/postcss-load-config
 
 module.exports = {
   "plugins": {
     "postcss-import": {},
     "postcss-url": {},
     // to edit target browsers: use "browserslist" field in package.json
-    "autoprefixer": {}
+    "autoprefixer": {
+      "browsers": ['last 10 Chrome versions', 'last 5 Firefox versions', 'Safari >= 8']
+     },
+     'postcss-px2rem':{'remUnit':37.5}    //配置rem基准值，75是iphone6标准
   }
 }

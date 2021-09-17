@@ -10,12 +10,23 @@
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
+    "lint": "eslint --fix --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js"
   },
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
+    "element-ui": "^2.15.6",
+    "husky": "^7.0.1",
+    "lib-flexible": "^0.3.2",
+    "node-sass": "^6.0.1",
+    "postcss-px2rem": "^0.3.0",
+    "postcss-px2rem-exclude": "^0.0.6",
+    "px2rem-loader": "^0.1.9",
+    "sass-loader": "^12.1.0",
+    "save": "^2.4.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -74,6 +85,17 @@
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">= 6.0.0",
